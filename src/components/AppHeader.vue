@@ -27,21 +27,21 @@
   <v-navigation-drawer v-model="drawer" app right>
     <v-list>
       <router-link to="/" style="text-decoration: none;">
-        <v-list-item>
+        <v-list-item @click="closeDrawer">
           <v-list-item-content>
             <v-list-item-title>Inicio</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </router-link>
       <router-link to="/products" style="text-decoration: none;">
-        <v-list-item>
+        <v-list-item @click="closeDrawer">
           <v-list-item-content>
             <v-list-item-title>Productos</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </router-link>
       <router-link to="/contact" style="text-decoration: none;">
-        <v-list-item>
+        <v-list-item @click="closeDrawer">
           <v-list-item-content>
             <v-list-item-title>Contacto</v-list-item-title>
           </v-list-item-content>
@@ -65,9 +65,11 @@ export default {
       this.currentLanguage = lang;
       console.log(`Language changed to: ${lang}`);
       // Aquí puedes añadir la lógica para cambiar el idioma
-      // Esto podría ser mediante Vue I18n o cualquier librería de manejo de idiomas
     },
-  },
+    closeDrawer() {
+      this.drawer = false; // Cierra el menú lateral
+    }
+  }
 };
 </script>
 
