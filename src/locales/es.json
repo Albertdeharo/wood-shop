@@ -1,6 +1,7 @@
 {
-    "menu_home_link": "Inicio",
-    "menu_products_link": "Productos",
-    "menu_contact_link": "Contacto"
-  }
-  
+  "language_spanish": "Español",
+  "language_english": "Inglés",
+  "menu_link_home": "Inicio",
+  "menu_link_products": "Productos",
+  "menu_link_contact": "Contacto"
+}
