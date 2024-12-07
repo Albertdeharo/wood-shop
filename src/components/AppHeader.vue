@@ -41,17 +41,37 @@
       <router-link
         to="/"
         style="text-decoration: none;"
+        class="nav-link"
       >
-        <v-list-item @click="closeDrawer">
+        <v-list-item
+          prepend-icon="mdi-home"
+          @click="closeDrawer"
+        >
           <v-list-item-title>{{ $t('menu_link_home') }}</v-list-item-title>
         </v-list-item>
       </router-link>
       <router-link
         to="/products"
         style="text-decoration: none;"
+        class="nav-link"
       >
-        <v-list-item @click="closeDrawer">
+        <v-list-item
+          prepend-icon="mdi-package"
+          @click="closeDrawer"
+        >
           <v-list-item-title>{{ $t('menu_link_products') }}</v-list-item-title>
+        </v-list-item>
+      </router-link>
+      <router-link
+        to="/contact"
+        style="text-decoration: none;"
+        class="nav-link"
+      >
+        <v-list-item
+          prepend-icon="mdi-email"
+          @click="closeDrawer"
+        >
+          <v-list-item-title>{{ $t('menu_link_contact') }}</v-list-item-title>
         </v-list-item>
       </router-link>
       <v-list-group value="Categorias">
@@ -59,28 +79,22 @@
           <v-list-item
             v-bind="props"
             title="Categorias"
+            prepend-icon="mdi-view-list"
           />
         </template>
-
         <v-list-item
           v-for="([title, icon], i) in Categories"
           :key="i"
           :prepend-icon="icon"
           :title="title"
           :value="title"
+          class="nav-link"
         />
       </v-list-group>
-      <router-link
-        to="/contact"
-        style="text-decoration: none;"
-      >
-        <v-list-item @click="closeDrawer">
-          <v-list-item-title>{{ $t('menu_link_contact') }}</v-list-item-title>
-        </v-list-item>
-      </router-link>
     </v-list>
   </v-navigation-drawer>
 </template>
+
 
 <script>
 export default {
@@ -112,3 +126,25 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+.nav-link {
+  color: white; /* Estilo general para todos los enlaces */
+}
+
+.nav-link.router-link-active {
+  color: #ffcc00; /* Estilo para el enlace activo */
+  font-weight: bold; /* Ejemplo de estilo adicional */
+}
+
+/* Estilo para los elementos de v-list-item dentro de v-list-group */
+.v-list-group .v-list-item {
+  color: white; /* Color uniforme para los elementos de las categorías */
+}
+
+/* Estilo de hover */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el mouse */
+}
+</style>
