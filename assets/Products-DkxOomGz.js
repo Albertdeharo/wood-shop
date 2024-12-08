@@ -1,1 +1,0 @@
-import{a1 as e,a2 as s,Z as t,U as r}from"./index-BbcL7lE3.js";const a={name:"Products"};function n(c,o,u,d,l,p){return r(),s("div",null,o[0]||(o[0]=[t("h1",null,"Productos",-1),t("p",null,"Lista de productos aquí...",-1)]))}const i=e(a,[["render",n]]);export{i as default};

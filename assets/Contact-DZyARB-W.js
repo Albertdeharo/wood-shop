@@ -1,1 +1,0 @@
-import{a1 as a,a2 as e,Z as o,U as n}from"./index-BbcL7lE3.js";const r={name:"Contact"};function c(s,t,l,p,u,d){return n(),e("div",null,t[0]||(t[0]=[o("h1",null,"Contacto",-1),o("p",null,"Formulario de contacto aquí...",-1)]))}const i=a(r,[["render",c]]);export{i as default};
