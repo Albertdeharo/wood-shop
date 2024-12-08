@@ -82,14 +82,20 @@
             prepend-icon="mdi-view-list"
           />
         </template>
-        <v-list-item
-          v-for="([title, icon], i) in Categories"
-          :key="i"
-          :prepend-icon="icon"
-          :title="title"
-          :value="title"
+        <router-link
+          v-for="(item, index) in Categories"
+          :key="index"
+          :to="item[2]"
+          style="text-decoration: none;"
           class="nav-link"
-        />
+        >
+          <v-list-item
+            :prepend-icon="item[1]"
+            @click="closeDrawer"
+          >
+            <v-list-item-title>{{ item[0] }}</v-list-item-title>
+          </v-list-item>
+        </router-link>
       </v-list-group>
     </v-list>
   </v-navigation-drawer>
@@ -104,13 +110,13 @@ export default {
       drawer: false,
       currentLanguage: 'es',
       Categories: [
-        ['Skylines', 'mdi-city-variant-outline'],
-        ['Imanes', 'mdi-magnet'],
-        ['Decoraciones', 'mdi-spa'],
-        ['Trofeos', 'mdi-trophy'],
-        ['Especiales', 'mdi-printer-3d'],
-        ['Iluminacion', 'mdi-lamps'],
-        ['Bodas', 'mdi-dance-ballroom'],
+        ['Skylines', 'mdi-city-variant-outline', '/skylines'],
+        ['Imanes', 'mdi-magnet', '/imanes'],
+        ['Decoraciones', 'mdi-spa', '/decoraciones'],
+        ['Trofeos', 'mdi-trophy', '/trofeos'],
+        ['Especiales', 'mdi-printer-3d', '/especiales'],
+        ['Iluminacion', 'mdi-lamps', '/iluminacion'],
+        ['Bodas', 'mdi-dance-ballroom', '/bodas'],
       ],
     };
   },
